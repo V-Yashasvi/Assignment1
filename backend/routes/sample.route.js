@@ -33,6 +33,15 @@ router.get('/get/:id', async(req, res)=>{
 
 router.post('/post', async(req, res)=>{
     const {name, email, password}=req.body
+    if(!name|| !email|| !password){
+        return res.status(400).json({"message":"Name, email and password are must"})
+    }
+    if (!email.includes('@')){
+        return res.status(400).json({"message":"Email must include '@'"})
+    }
+    if(password.length<6 || password.length>16){
+        return res.status(400).json({"message":"Password must be minimum 6 characters and should not exceed 16 characters"})
+    }
     const payload={name, email, password}
     try {
         const new_data=new Schema(payload)

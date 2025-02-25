@@ -6,6 +6,14 @@ meta {
 
 put {
   url: http://localhost:8000/router/put/67bd5c002e7955f76b3e612e
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "Bakki",
+    "email": "bakki@example.com",
+    "password": "securePassword"
+  }
 }
