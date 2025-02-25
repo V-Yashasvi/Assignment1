@@ -1,3 +1,6 @@
-# Assignment1
-
-Push check
+## Crud Operations
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
